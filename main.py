@@ -1,16 +1,7 @@
 #!/usr/bin/env python3.11
 # -*- coding: utf-8 -*-
 
-from fastapi import FastAPI
+from app import start
 
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, query_param: str = None):
-    return {"item_id": item_id, "query_param": query_param}
+if __name__ == "__main__":
+    start()
